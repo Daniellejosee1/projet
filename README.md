@@ -1,2 +1,2 @@
-# projet
-Elearning web app project
+#Elearning web app project
+Object-Oriented Programming project
