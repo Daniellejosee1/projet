@@ -31,6 +31,7 @@ public class systemeServiceImpl implements systemeService {
         systeme existingsysteme = systemeRepository.findById(id).orElse(null);
         if (existingsysteme != null) {
             existingsysteme.setName(systeme.getName());
+            existingsysteme.setSubsystems(systeme.getSubsystems());
             systemeRepository.save(existingsysteme);
         }
     }

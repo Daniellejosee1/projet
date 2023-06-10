@@ -1,6 +1,9 @@
 package com.projetpoo.demo.contenu.subsystem;
 
 import java.io.Serializable;
+import java.util.List;
+
+import com.projetpoo.demo.contenu.cycle.cycle;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -10,6 +13,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -32,6 +36,14 @@ public class subsystem implements Serializable {
         return name;
     }
 
+    public List<cycle> getCycles() {
+        return cycles;
+    }
+
+    public void setCycles(List<cycle> cycles) {
+        this.cycles = cycles;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -47,4 +59,8 @@ public class subsystem implements Serializable {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "idsubsys", nullable = false)
     private com.projetpoo.demo.contenu.systeme.systeme systeme;
+
+    @OneToMany(mappedBy = "subsystem")
+    private List<cycle> cycles;
+
 }

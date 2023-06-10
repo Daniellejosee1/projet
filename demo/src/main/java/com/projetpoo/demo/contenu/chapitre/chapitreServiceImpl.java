@@ -32,6 +32,7 @@ public class chapitreServiceImpl implements chapitreService {
         if (existingChap != null) {
             existingChap.setName(chapitre.getName());
             existingChap.setMatiere(chapitre.getMatiere());
+            existingChap.setLessons(chapitre.getLessons());
             chapitreRepository.save(existingChap);
         }
     }

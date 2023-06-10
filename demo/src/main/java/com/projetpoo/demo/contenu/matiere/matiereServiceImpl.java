@@ -31,6 +31,7 @@ public class matiereServiceImpl implements matiereService {
         if (existingmatiere != null) {
             existingmatiere.setName(matiere.getName());
             existingmatiere.setNiveau(matiere.getNiveau());
+            existingmatiere.setChapitres(matiere.getChapitres());
             matiereRepository.save(existingmatiere);
         }
     }

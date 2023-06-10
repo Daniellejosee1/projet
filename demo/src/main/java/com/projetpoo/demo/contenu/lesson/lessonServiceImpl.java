@@ -32,6 +32,7 @@ public class lessonServiceImpl implements lessonService {
         if (existingLesson != null) {
             existingLesson.setName(lesson.getName());
             existingLesson.setChapitre(lesson.getChapitre());
+            existingLesson.setVideos(lesson.getVideos());
             lessonRepository.save(existingLesson);
         }
     }

@@ -32,6 +32,7 @@ public void updateNiv(Long id, niveau niveau) {
     if (existingNiv != null) {
         existingNiv.setName(niveau.getName());
         existingNiv.setCycle(niveau.getCycle());
+        existingNiv.setMatieres(niveau.getMatieres());
         niveauRepository.save(existingNiv);
     }
 }

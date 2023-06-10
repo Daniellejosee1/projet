@@ -32,6 +32,7 @@ public class cycleServiceImpl implements cycleService {
         if (existingCycle != null) {
             existingCycle.setName(cycle.getName());
             existingCycle.setSubsystem(cycle.getSubsystem());
+            existingCycle.setNiveaux(cycle.getNiveaux());
             cycleRepository.save(existingCycle);
         }
     }

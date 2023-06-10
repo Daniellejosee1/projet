@@ -32,6 +32,7 @@ public class subsystemServiceImpl implements subsystemService {
         if (existingsubsystem != null) {
             existingsubsystem.setName(subsystem.getName());
             existingsubsystem.setSysteme(subsystem.getSysteme());
+            existingsubsystem.setCycles(subsystem.getCycles());
             subsystemRepository.save(existingsubsystem);
         }
     }

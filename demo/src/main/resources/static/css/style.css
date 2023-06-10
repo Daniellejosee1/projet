@@ -392,16 +392,80 @@ section{
    line-height: 2;
 }
 
-.home-grid .box-container .likes{
-   color:var(--light-color);
-   font-size: 1.7rem;
-   margin-top: 1.5rem;
-}
-
-.home-grid .box-container .likes span{
-   color:var(--main-color);
-}
-
+/* Conteneur positionné pour placer les menus déroulants l'un au-dessus de l'autre */
+.home-grid .box-container .dropdown-container {
+   position: relative;
+   margin-top: 20px; /* Ajoute un espace de 20 pixels entre le conteneur et le reste de la page */
+ }
+ 
+ /* Style du bouton et du menu déroulant 1 */
+ .home-grid .box-container .dropbtn1 {
+   background-color: #754f9b;
+   color: white;
+   padding: 10px;
+   font-size: 16px;
+   border: none;
+   cursor: pointer;
+ }
+ 
+ .home-grid .box-container .dropdown-content1 {
+   display: none;
+   position: absolute;
+   background-color: #f9f9f9;
+   min-width: 160px;
+   z-index: 1;
+ }
+ 
+ .home-grid .box-container .dropdown-content1 a {
+   color: black;
+   padding: 10px;
+   text-decoration: none;
+   display: block;
+ }
+ 
+ .home-grid .box-container .dropdown:hover .dropdown-content1 {
+   display: block;
+ }
+ 
+ /* Style du bouton et du menu déroulant 2 */
+ .home-grid .box-container .dropbtn2 {
+   background-color: #754f9b;
+   color: white;
+   padding: 10px;
+   font-size: 16px;
+   border: none;
+   cursor: pointer;
+ }
+ 
+ .home-grid .box-container .dropdown-content2 {
+   display: none;
+   position: absolute;
+   background-color: #f9f9f9;
+   min-width: 160px;
+   z-index: 1;
+ }
+ 
+ .home-grid .box-container .dropdown-content2 a {
+   color: black;
+   padding: 10px;
+   text-decoration: none;
+   display: block;
+ }
+ 
+ .home-grid .box-container .dropdown:hover .dropdown-content2 {
+   display: block;
+ }
+ 
+ /* Ajoute un espace de 20 pixels entre les menus déroulants */
+ .home-grid .box-container .dropdown:first-child {
+   margin-bottom: 20px;
+ }
+ 
+ /* Ajuste la position verticale du deuxième menu déroulant */
+ .home-grid .box-container .dropdown:last-child .dropdown-content2 {
+   top: 100%;
+ }
+ 
 .about .row{
    display: flex;
    align-items: center;
