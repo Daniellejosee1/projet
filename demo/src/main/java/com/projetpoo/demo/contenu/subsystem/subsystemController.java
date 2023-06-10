@@ -1,4 +1,4 @@
-package com.projetpoo.demo.contenu.systeme;
+package com.projetpoo.demo.contenu.subsystem;
 
 import java.util.List;
 
@@ -13,34 +13,34 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/projet/contenu/systeme")
-public class systemeController {
- 
+@RequestMapping("/projet/contenu/subsystem")
+public class subsystemController {
+
     @Autowired
-    private systemeService systemeService;
- 
+    private subsystemService subsystemService;
+
     @GetMapping("")
-    public List<systeme> getAllsystemes() {
-        return systemeService.getAllsystemes();
+    public List<subsystem> getAllsubsystems() {
+        return subsystemService.getAllsubsystems();
     }
 
     @GetMapping("/{id}")
-    public systeme getSysById(@PathVariable Long id) {
-        return systemeService.getSysById(id);
+    public subsystem getSubsysById(@PathVariable Long id) {
+        return subsystemService.getSubsysById(id);
     }
-    
+
     @PostMapping("")
-    public void createSys(@RequestBody systeme systeme) {
-        systemeService.createSys(systeme);
+    public void createSubsys(@RequestBody subsystem subsystem) {
+        subsystemService.createSubsys(subsystem);
     }
-    
+
     @PutMapping("/{id}")
-    public void updateSys(@PathVariable Long id, @RequestBody systeme systeme) {
-        systemeService.updateSys(id, systeme);
+    public void updateSubsys(@PathVariable Long id, @RequestBody subsystem subsystem) {
+        subsystemService.updateSubsys(id, subsystem);
     }
 
     @DeleteMapping("/{id}")
-    public void deleteSys(@PathVariable Long id) {
-        systemeService.deleteSys(id);
+    public void deleteSubsys(@PathVariable Long id) {
+        subsystemService.deleteSubsys(id);
     }
 }

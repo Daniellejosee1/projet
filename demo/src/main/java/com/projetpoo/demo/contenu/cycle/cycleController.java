@@ -1,4 +1,4 @@
-package com.projetpoo.demo.contenu.systeme;
+package com.projetpoo.demo.contenu.cycle;
 
 import java.util.List;
 
@@ -13,34 +13,36 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/projet/contenu/systeme")
-public class systemeController {
- 
+@RequestMapping("/projet/contenu/cycle")
+public class cycleController {
+
     @Autowired
-    private systemeService systemeService;
- 
+    private cycleService cycleService;
+
     @GetMapping("")
-    public List<systeme> getAllsystemes() {
-        return systemeService.getAllsystemes();
+    public List<cycle> getAllcycles() {
+        return cycleService.getAllcycles();
     }
 
     @GetMapping("/{id}")
-    public systeme getSysById(@PathVariable Long id) {
-        return systemeService.getSysById(id);
+    public cycle getCycleById(@PathVariable Long id) {
+        return cycleService.getCycleById(id);
     }
-    
+
     @PostMapping("")
-    public void createSys(@RequestBody systeme systeme) {
-        systemeService.createSys(systeme);
+    public void createCycle(@RequestBody cycle cycle) {
+       cycleService.createCycle(cycle);
     }
-    
+
     @PutMapping("/{id}")
-    public void updateSys(@PathVariable Long id, @RequestBody systeme systeme) {
-        systemeService.updateSys(id, systeme);
+    public void updateCycle(@PathVariable Long id, @RequestBody cycle cycle) {
+        cycleService.updateCycle(id, cycle);
     }
 
     @DeleteMapping("/{id}")
-    public void deleteSys(@PathVariable Long id) {
-        systemeService.deleteSys(id);
+    public void deleteCycle(@PathVariable Long id) {
+        cycleService.deleteCycle(id);
     }
 }
+
+

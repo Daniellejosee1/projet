@@ -11,13 +11,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/enseignant")
+@RequestMapping("/projet/admin/enseignant")
 public class enseignantController {
  
     @Autowired
     private enseignantService enseignantService;
  
-    @GetMapping("/{ensname}")
+    @GetMapping("/{name}")
     public enseignant getEnsByName(@PathVariable String name) {
         return enseignantService.findByName(name);
     }

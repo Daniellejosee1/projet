@@ -1,4 +1,4 @@
-package com.projetpoo.demo.contenu.systeme;
+package com.projetpoo.demo.contenu.chapitre;
 
 import java.util.List;
 
@@ -13,34 +13,34 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/projet/contenu/systeme")
-public class systemeController {
- 
+@RequestMapping("/projet/contenu/chapitres")
+public class chapitreController {
+
     @Autowired
-    private systemeService systemeService;
- 
+    private chapitreService chapitreService;
+
     @GetMapping("")
-    public List<systeme> getAllsystemes() {
-        return systemeService.getAllsystemes();
+    public List<chapitre> getAllchapitres() {
+        return chapitreService.getAllchapitres();
     }
 
     @GetMapping("/{id}")
-    public systeme getSysById(@PathVariable Long id) {
-        return systemeService.getSysById(id);
+    public chapitre getChapById(@PathVariable Long id) {
+        return chapitreService.getChapById(id);
     }
-    
+
     @PostMapping("")
-    public void createSys(@RequestBody systeme systeme) {
-        systemeService.createSys(systeme);
+    public void createChap(@RequestBody chapitre chapitre) {
+        chapitreService.createChap(chapitre);
     }
-    
+
     @PutMapping("/{id}")
-    public void updateSys(@PathVariable Long id, @RequestBody systeme systeme) {
-        systemeService.updateSys(id, systeme);
+    public void updateChap(@PathVariable Long id, @RequestBody chapitre chapitre) {
+        chapitreService.updateChap(id, chapitre);
     }
 
     @DeleteMapping("/{id}")
-    public void deleteSys(@PathVariable Long id) {
-        systemeService.deleteSys(id);
+    public void deleteChap(@PathVariable Long id) {
+        chapitreService.deleteChap(id);
     }
 }

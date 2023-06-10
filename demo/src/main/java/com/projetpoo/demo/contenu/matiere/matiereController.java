@@ -1,4 +1,4 @@
-package com.projetpoo.demo.contenu.systeme;
+package com.projetpoo.demo.contenu.matiere;
 
 import java.util.List;
 
@@ -13,34 +13,34 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/projet/contenu/systeme")
-public class systemeController {
- 
+@RequestMapping("/projet/contenu/matieres")
+public class matiereController {
+
     @Autowired
-    private systemeService systemeService;
- 
+    private matiereService matiereService;
+
     @GetMapping("")
-    public List<systeme> getAllsystemes() {
-        return systemeService.getAllsystemes();
+    public List<matiere> getAllmatieres() {
+        return matiereService.getAllmatieres();
     }
 
     @GetMapping("/{id}")
-    public systeme getSysById(@PathVariable Long id) {
-        return systemeService.getSysById(id);
+    public matiere getmatiereById(@PathVariable Long id) {
+        return matiereService.getMatById(id);
     }
-    
+
     @PostMapping("")
-    public void createSys(@RequestBody systeme systeme) {
-        systemeService.createSys(systeme);
+    public void creatematiere(@RequestBody matiere matiere) {
+        matiereService.createMat(matiere);
     }
-    
+
     @PutMapping("/{id}")
-    public void updateSys(@PathVariable Long id, @RequestBody systeme systeme) {
-        systemeService.updateSys(id, systeme);
+    public void updatematiere(@PathVariable Long id, @RequestBody matiere matiere) {
+        matiereService.updateMat(id, matiere);
     }
 
     @DeleteMapping("/{id}")
-    public void deleteSys(@PathVariable Long id) {
-        systemeService.deleteSys(id);
+    public void deletematiere(@PathVariable Long id) {
+        matiereService.deleteMat(id);
     }
 }

@@ -1,4 +1,4 @@
-package com.projetpoo.demo.contenu.systeme;
+package com.projetpoo.demo.contenu.niveau;
 
 import java.util.List;
 
@@ -13,34 +13,34 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/projet/contenu/systeme")
-public class systemeController {
- 
+@RequestMapping("/projet/contenu/niveau")
+public class niveauController {
+
     @Autowired
-    private systemeService systemeService;
- 
+    private niveauService niveauService;
+
     @GetMapping("")
-    public List<systeme> getAllsystemes() {
-        return systemeService.getAllsystemes();
+    public List<niveau> getAllniveaux() {
+        return niveauService.getAllniveaux();
     }
 
     @GetMapping("/{id}")
-    public systeme getSysById(@PathVariable Long id) {
-        return systemeService.getSysById(id);
+    public niveau getNivById(@PathVariable Long id) {
+        return niveauService.getNivById(id);
     }
-    
+
     @PostMapping("")
-    public void createSys(@RequestBody systeme systeme) {
-        systemeService.createSys(systeme);
+    public void createNiv(@RequestBody niveau niveau) {
+        niveauService.createNiv(niveau);
     }
-    
+
     @PutMapping("/{id}")
-    public void updateSys(@PathVariable Long id, @RequestBody systeme systeme) {
-        systemeService.updateSys(id, systeme);
+    public void updateNiv(@PathVariable Long id, @RequestBody niveau niveau) {
+        niveauService.updateNiv(id, niveau);
     }
 
     @DeleteMapping("/{id}")
-    public void deleteSys(@PathVariable Long id) {
-        systemeService.deleteSys(id);
+    public void deleteNiv(@PathVariable Long id) {
+        niveauService.deleteNiv(id);
     }
 }

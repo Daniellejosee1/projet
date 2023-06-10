@@ -1,4 +1,4 @@
-package com.projetpoo.demo.contenu.systeme;
+package com.projetpoo.demo.contenu.lesson;
 
 import java.util.List;
 
@@ -13,34 +13,34 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/projet/contenu/systeme")
-public class systemeController {
- 
+@RequestMapping("/projet/contenu/lesson")
+public class lessonController {
+
     @Autowired
-    private systemeService systemeService;
- 
+    private lessonService lessonService;
+
     @GetMapping("")
-    public List<systeme> getAllsystemes() {
-        return systemeService.getAllsystemes();
+    public List<lesson> getAlllessons() {
+        return lessonService.getAlllessons();
     }
 
     @GetMapping("/{id}")
-    public systeme getSysById(@PathVariable Long id) {
-        return systemeService.getSysById(id);
+    public lesson getLessonById(@PathVariable Long id) {
+        return lessonService.getLesById(id);
     }
-    
+
     @PostMapping("")
-    public void createSys(@RequestBody systeme systeme) {
-        systemeService.createSys(systeme);
+    public void createLes(@RequestBody lesson lesson) {
+        lessonService.createLes(lesson);
     }
-    
+
     @PutMapping("/{id}")
-    public void updateSys(@PathVariable Long id, @RequestBody systeme systeme) {
-        systemeService.updateSys(id, systeme);
+    public void updateLes(@PathVariable Long id, @RequestBody lesson lesson) {
+        lessonService.updateLes(id, lesson);
     }
 
     @DeleteMapping("/{id}")
-    public void deleteSys(@PathVariable Long id) {
-        systemeService.deleteSys(id);
+    public void deleteLes(@PathVariable Long id) {
+        lessonService.deleteLes(id);
     }
 }

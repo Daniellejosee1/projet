@@ -1,12 +1,15 @@
 package com.projetpoo.demo.contenu.chapitre;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-import javax.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
+import jakarta.persistence.Column;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "chapitre")
@@ -19,10 +22,6 @@ public class chapitre implements Serializable {
     @Column(name = "chapname")
     private String name;
 
-    public chapitre(String name) {
-        this.name = name;
-    }
-
     public String getName() {
         return name;
     }
@@ -30,6 +29,23 @@ public class chapitre implements Serializable {
     public void setName(String name) {
         this.name = name;
     }
+
+    public com.projetpoo.demo.contenu.matiere.matiere getMatiere() {
+        return matiere;
+    }
+
+    public void setMatiere(com.projetpoo.demo.contenu.matiere.matiere matiere) {
+        this.matiere = matiere;
+    }
+
+    public chapitre(String name, com.projetpoo.demo.contenu.matiere.matiere matiere) {
+        this.name = name;
+        this.matiere = matiere;
+    }
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "idmat", nullable = false)
+    private com.projetpoo.demo.contenu.matiere.matiere matiere;
  
     // getters and setters
 }
