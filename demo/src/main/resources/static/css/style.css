@@ -392,80 +392,73 @@ section{
    line-height: 2;
 }
 
-/* Conteneur positionné pour placer les menus déroulants l'un au-dessus de l'autre */
-.home-grid .box-container .dropdown-container {
-   position: relative;
-   margin-top: 20px; /* Ajoute un espace de 20 pixels entre le conteneur et le reste de la page */
- }
- 
- /* Style du bouton et du menu déroulant 1 */
- .home-grid .box-container .dropbtn1 {
-   background-color: #754f9b;
-   color: white;
-   padding: 10px;
-   font-size: 16px;
-   border: none;
-   cursor: pointer;
- }
- 
- .home-grid .box-container .dropdown-content1 {
-   display: none;
-   position: absolute;
-   background-color: #f9f9f9;
-   min-width: 160px;
-   z-index: 1;
- }
- 
- .home-grid .box-container .dropdown-content1 a {
-   color: black;
-   padding: 10px;
-   text-decoration: none;
-   display: block;
- }
- 
- .home-grid .box-container .dropdown:hover .dropdown-content1 {
-   display: block;
- }
- 
- /* Style du bouton et du menu déroulant 2 */
- .home-grid .box-container .dropbtn2 {
-   background-color: #754f9b;
-   color: white;
-   padding: 10px;
-   font-size: 16px;
-   border: none;
-   cursor: pointer;
- }
- 
- .home-grid .box-container .dropdown-content2 {
-   display: none;
-   position: absolute;
-   background-color: #f9f9f9;
-   min-width: 160px;
-   z-index: 1;
- }
- 
- .home-grid .box-container .dropdown-content2 a {
-   color: black;
-   padding: 10px;
-   text-decoration: none;
-   display: block;
- }
- 
- .home-grid .box-container .dropdown:hover .dropdown-content2 {
-   display: block;
- }
- 
- /* Ajoute un espace de 20 pixels entre les menus déroulants */
- .home-grid .box-container .dropdown:first-child {
-   margin-bottom: 20px;
- }
- 
- /* Ajuste la position verticale du deuxième menu déroulant */
- .home-grid .box-container .dropdown:last-child .dropdown-content2 {
-   top: 100%;
- }
- 
+/* Style pour les menus déroulants */
+.home-grid .box-container .dropdown {
+	position: relative;
+	display: inline-block;
+
+}
+
+.home-grid .box-container .dropdown-content {
+	display: none;
+	position: absolute;
+	z-index: 1;
+	background-color: #f1f1f1;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.home-grid .box-container .dropdown-content button {
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+	width: 100%;
+	background-color: transparent;
+	border: none;
+	text-align: left;
+	cursor: pointer;
+}
+
+.home-grid .box-container .dropdown-content button:hover {
+	background-color: #ddd;
+}
+
+.home-grid .box-container .dropdown:hover .dropdown-content {
+	display: block;
+}
+
+/* Style pour les menus déroulants imbriqués */
+.home-grid .box-container .dropdown-submenu {
+	position: relative;
+}
+
+.home-grid .box-container .dropdown-submenu-content {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 100%;
+	z-index: 1;
+	min-width: 160px;
+	background-color: #f1f1f1;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.home-grid .box-container .dropdown-submenu-content a {
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+}
+
+.home-grid .box-container .dropdown-submenu-content a:hover {
+	background-color: #ddd;
+}
+
+.home-grid .box-container .dropdown-submenu:hover .dropdown-submenu-content {
+	display: block;
+}
+
 .about .row{
    display: flex;
    align-items: center;
