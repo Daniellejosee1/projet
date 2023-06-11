@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Mot de passe oublié</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: aqua;
+        margin: 0;
+        padding: 0;
+      }
+      
+      h1 {
+        font-size: 2.5rem;
+        color: #333;
+        text-align: center;
+        margin-top: 2rem;
+      }
+      
+      p {
+        font-size: 1.2rem;
+        color: #555;
+        text-align: center;
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+      
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 1.5rem;
+      }
+      
+      label {
+        font-size: 1.2rem;
+        color: #333;
+        margin-bottom: 0.5rem;
+      }
+      
+      input[type="email"] {
+        width: 20rem;
+        padding: 0.5rem;
+        font-size: 1.2rem;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+      }
+      
+      input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 0.5rem 1.5rem;
+        font-size: 1.2rem;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-top: 1rem;
+      }
+      
+      input[type="submit"]:hover {
+        background-color: #3e8e41;
+      }
+      
+      a {
+        color: #4CAF50;
+        text-decoration: none;
+      }
+      
+      a:hover {
+        text-decoration: underline;
+      }
+      
+      .valid {
+        color: #4CAF50;
+        margin-top: 0.5rem;
+      }
+      
+      .invalid {
+        color: #ff0000;
+        margin-top: 0.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Mot de passe oublié</h1>
+    <p>Veuillez entrer l'adresse e-mail associée à votre compte pour réinitialiser votre mot de passe.</p>
+    <form>
+      <label for="email">E-mail :</label>
+      <input type="email" id="email" name="email" required><br>
+      <span id="email-message" class="valid"></span>
+      <br>
+      <input type="submit" value="Envoyer">
+    </form>
+    <p>Vous n'avez pas de compte ? <a href="register.html">Inscrivez-vous ici!</a>.</p>
+    <script>
+      const emailInput = document.getElementById('email');
+      const emailMessage = document.getElementById('email-message');
+      
+      emailInput.addEventListener('input', function(event) {
+        if (emailInput.validity.valid) {
+          emailInput.style.border = '2px solid #4CAF50';
+          emailMessage.innerHTML = '<i class="fas fa-check-circle"></i> Adresse e-mail valide';
+          emailMessage.className = 'valid';
+        } else {
+          emailInput.style.border = '2px solid #ff0000';
+          emailMessage.innerHTML = '<i class="fas fa-times-circle"></i> Adresse e-mail invalide';
+          emailMessage.className = 'invalid';
+        }
+      });
+    </script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  </body>
+</html>
