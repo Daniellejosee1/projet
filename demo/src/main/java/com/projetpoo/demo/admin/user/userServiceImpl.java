@@ -1,12 +1,16 @@
 package com.projetpoo.demo.admin.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
 public class userServiceImpl implements userService{
     @Autowired
     private userRepository userRepository;
+ 
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     @Override
     public user findByUsername(String username) {
@@ -23,7 +27,7 @@ public class userServiceImpl implements userService{
         user existingUser = userRepository.findById(id).orElse(null);
         if (existingUser != null) {
             existingUser.setUsername(user.getUsername());
-            existingUser.setPassword(user.getPassword());
+            existingUser.setPassword(passwordEncoder.encode(user.getPassword()));
             userRepository.save(existingUser);
         }
     }
