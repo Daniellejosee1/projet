@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Enseignant</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+</head>
+
+<body>
+
+<div class="container my-2">
+    <h1>Enseignant List</h1>
+
+    <a th:href="@{/enseignants/get_create_form}" class="btn btn-primary btn-sm mb-3"> Add Enseignant </a>
+
+    <table border="1" class="table table-striped table-responsive-md">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Birthday</th>
+            <th>Telephone</th>
+            <th>Mail</th>
+            <th>Description</th>
+            <th> Actions </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="enseignant : ${enseignants}">
+            <td th:text="${enseignant.name}"></td>
+            <td th:text="${enseignant.description}"></td>
+
+            <td><a th:href="@{/enseignants/get_update_form/{id}(id=${enseignant.id})}" class="btn btn-primary"><i class="fas fa-user-edit ml-2"></i></a></td>
+            <td><a th:href="@{/enseignants/delete/{id}(id=${enseignant.id})}" class="btn btn-primary"><i class="fas fa-user-times ml-2"></i></a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+
+</html>
